@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import notfound from '../../images/404.png';
 import './NotFound.css';
 
 const NotFound = () => {
     return (
-        <div>
-            <img className="notfound-img" src={notfound} alt="" />
+        <div className="py-5">
+
             <Link to="/">
-                <button>Go Back</button>
+                <button className="btn btn-success ">Go Back</button>
             </Link>
         </div>
     );

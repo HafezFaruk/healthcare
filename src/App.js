@@ -9,6 +9,8 @@ import Header from './Pages/Shared/Header/Header';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute'
 import Footer from './Pages/Shared/Footer/Footer';
+import Register from './Pages/Home/Register/Register';
+import Equipments from './Pages/Home/Equipments/Equipments';
 
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/equipment">
+              <Equipments></Equipments>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
             </Route>
             <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>

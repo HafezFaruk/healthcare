@@ -59,8 +59,9 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="text-center">
                             <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#expert">Expert</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#services">Doctors</Nav.Link>
+                            <Nav.Link as={HashLink} to="/equipment">Equipments</Nav.Link>
+                            <Nav.Link as={HashLink} to="/register">Register</Nav.Link>
                             {user?.email ?
                                 <Button onClick={logOut} variant="light">Logout</Button>
                                 : <Nav.Link as={Link} to="/login">Login</Nav.Link>
