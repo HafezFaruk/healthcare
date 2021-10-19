@@ -5,14 +5,14 @@ import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
-  const { allContext,handelPass,
-    handelEmail,} = useAuth();
- const  { signInUsingGoogle } = allContext
+  const { allContext} = useAuth();
+ const  { signInUsingGoogle,handelPass,
+  handelEmail,loginProcess } = allContext
   return (
     <div className="py-5">
       <h2>Please Login</h2>
       <div className="w-25 mx-auto">
-        <Form>
+        <Form onSubmit={loginProcess}>
           <Row>
             <Col className="text-start">
               <Form.Label htmlFor="email" visuallyHidden>
@@ -51,9 +51,12 @@ const Login = () => {
               </InputGroup>
             </Col>
           </Row>
+          <button type="submit" className="btn btn-primary mt-2 w-100">
+            Login
+          </button>
         </Form>
         <button onClick={signInUsingGoogle} type="submit" className="btn btn-primary mt-2 w-100">
-          Login
+          Google
         </button>
       </div>
     </div>
