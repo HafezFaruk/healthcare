@@ -5,7 +5,7 @@ import {
   faEnvelope,
   faLock,
   faUser,
-  faLink,
+  // faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 // import useAuth from "../../hooks/useAuth";

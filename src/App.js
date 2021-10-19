@@ -12,6 +12,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Register from './Pages/Home/Register/Register';
 import Equipments from './Pages/Equipments/Equipments';
 import SignUp from './Pages/SignUp/SignUp';
+import Facilities from './Pages/Facilities/Facilities';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/equipment">
               <Equipments></Equipments>
+            </Route>
+            <Route path="/facilities">
+              <Facilities></Facilities>
             </Route>
             <Route path="/register">
               <Register></Register>
