@@ -12,9 +12,11 @@ const Details = () => {
     console.log(matchingDoctors);
     return (
         <div>
-            <h1>This is Details: {detailsId} </h1>
+            <h1>Details Page</h1>
             <img src={matchingDoctors?.img} alt="" />
-            <h1>Price:{matchingDoctors?.price}$</h1>
+            <h4>{matchingDoctors?.name}</h4>
+            <h4>Meet fee: ${matchingDoctors?.price}</h4>
+            <h4>{matchingDoctors?.description}</h4>
         </div>
     );
 };

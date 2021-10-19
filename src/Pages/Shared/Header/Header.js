@@ -8,7 +8,7 @@ import logo from '../../../images/icon/logo.png'
 const Header = () => {
     // const { user, logOut } = useAuth();
     const { allContext } = useAuth();
-    const { user, logOut } = allContext
+    const { user, logOut } = allContext;
     return (
         <>
             <Container className="py-3 ">
