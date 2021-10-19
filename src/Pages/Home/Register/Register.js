@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 
 const Register = () => {
-    const formStyle = { background: "transparent", color: "black" };
+  const formStyle = { background: "transparent", color: "black" };
 
   return (
     <div className="register" style={{ padding: "58px 0 40px" }}>

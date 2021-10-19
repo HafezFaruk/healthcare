@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <>
             <Container className="py-3 ">
-                <Row>
+                <Row className="text-start">
                     <Col md="3">
                         <img src={logo} alt="" />
                     </Col>
@@ -59,7 +59,7 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="text-center">
                             <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#services">Doctors</Nav.Link>
+                            {/* <Nav.Link as={HashLink} to="/home#services">Doctors</Nav.Link> */}
                             <Nav.Link as={HashLink} to="/equipment">Equipments</Nav.Link>
                             <Nav.Link as={HashLink} to="/register">Register</Nav.Link>
                             {user?.email ?

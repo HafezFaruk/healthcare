@@ -1,28 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import Service from '../Service/Service';
-import './Equipments.css';
-
-
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import './Equipments.css'
+import img1 from '../../../images/equipments/img1.jpg';
+import img2 from '../../../images/equipments/img2.jpg';
+import img3 from '../../../images/equipments/img3.jpg';
+import img4 from '../../../images/equipments/img4.jpg';
+import img5 from '../../../images/equipments/img5.jpg';
+import img6 from '../../../images/equipments/img8.jpg';
 const Equipments = () => {
-    const [services, setServices] = useState([])
-    useEffect(() => {
-        fetch('equipment.json')
-            .then(res => res.json())
-            .then(data => setServices(data));
-    }, [])
-
     return (
         <div>
-            <h1 className="text-primary mt-5">Our Equipments</h1>
-            <div className="service-container">
-                {
-                    services.map(service => <Service
-                    
-                        key={service.id}
-                        service={service}
-                    ></Service>)
-                }
-            </div>
+            <h1>Our Equipments</h1>
+            <Row md="3" sm="1">
+                <Col >
+                    <img className="img-fluid" src={img1} alt="Equipments" />
+                </Col>
+                <Col>
+                    <img className="img-fluid" src={img2} alt="Equipments" />
+                </Col>
+                <Col>
+                    <img className="img-fluid" src={img3} alt="Equipments" />
+
+                </Col>
+                <Col>
+                    <img className="img-fluid" src={img4} alt="Equipments" />
+                </Col>
+                <Col>
+                    <img className="img-fluid" src={img5} alt="Equipments" />
+                </Col>
+                <Col>
+                    <img className="img-fluid" src={img6} alt="Equipments" />
+                </Col>
+            </Row>
         </div>
     );
 };

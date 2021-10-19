@@ -6,7 +6,7 @@ const Login = () => {
     return (
         <div className="py-5">
             <h2>Please Login</h2>
-            <button onClick={signInUsingGoogle} className="btn btn-warning">Google Sign In</button>
+            <button onClick={signInUsingGoogle} className="btn btn-primary">Google Sign In</button>
         </div>
     );
 };
