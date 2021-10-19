@@ -5,8 +5,8 @@ import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
-  // const { signInUsingGoogle } = useAuth();
-  const { allContext } = useAuth();
+  const { allContext,handelPass,
+    handelEmail,} = useAuth();
  const  { signInUsingGoogle } = allContext
   return (
     <div className="py-5">
@@ -23,7 +23,7 @@ const Login = () => {
                   <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
                 </InputGroup.Text>
                 <FormControl
-                  //   onBlur={getEmail}
+                    onBlur={handelEmail}
                   type="email"
                   autoComplete="current-email"
                   id="email"
@@ -42,7 +42,7 @@ const Login = () => {
                   <FontAwesomeIcon icon={faLock}></FontAwesomeIcon>
                 </InputGroup.Text>
                 <FormControl
-                  //   onBlur={getPassword}
+                    onBlur={handelPass}
                   type="password"
                   autoComplete="current-password"
                   id="password"
