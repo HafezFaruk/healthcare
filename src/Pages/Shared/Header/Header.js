@@ -6,7 +6,9 @@ import { HashLink } from 'react-router-hash-link';
 import logo from '../../../images/icon/logo.png'
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    // const { user, logOut } = useAuth();
+    const { allContext } = useAuth();
+    const { user, logOut } = allContext
     return (
         <>
             <Container className="py-3 ">
@@ -62,9 +64,17 @@ const Header = () => {
                             {/* <Nav.Link as={HashLink} to="/home#services">Doctors</Nav.Link> */}
                             <Nav.Link as={HashLink} to="/equipment">Equipments</Nav.Link>
                             <Nav.Link as={HashLink} to="/register">Register</Nav.Link>
+
                             {user?.email ?
                                 <Button onClick={logOut} variant="light">Logout</Button>
-                                : <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                : <>
+                                    <Nav.Link as={Link} to="/signup" className="text-white">
+                                        Sign Up
+                                    </Nav.Link>
+                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                </>
+
+
                             }
                             <Navbar.Text>
                                 <a href="#login">{user?.displayName}</a>

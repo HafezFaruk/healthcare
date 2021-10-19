@@ -10,7 +10,8 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute'
 import Footer from './Pages/Shared/Footer/Footer';
 import Register from './Pages/Home/Register/Register';
-import Equipments from './Pages/Home/Equipments/Equipments';
+import Equipments from './Pages/Equipments/Equipments';
+import SignUp from './Pages/SignUp/SignUp';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/signup">
+              <SignUp></SignUp>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

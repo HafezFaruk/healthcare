@@ -3,15 +3,16 @@ import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Details = () => {
-    const { DetailsId } = useParams();
-    const {doctors} = useAuth();
-    console.log(doctors);
+    const { detailsId } = useParams();
+    // const {doctors} = useAuth();
+    const {services} = useAuth();
+    console.log(services);
 
-    const matchingDoctors = doctors?.find((doctors) => Number(doctors.id) === Number(DetailsId));
+    const matchingDoctors = services?.find((doctors) => (doctors.id) === Number(detailsId));
     console.log(matchingDoctors);
     return (
         <div>
-            <h1>This is Details: {DetailsId} </h1>
+            <h1>This is Details: {detailsId} </h1>
             <img src={matchingDoctors?.img} alt="" />
             <h1>Price:{matchingDoctors?.price}$</h1>
         </div>
