@@ -11,12 +11,13 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const SignUp = () => {
-const {allContext} = useAuth();
-const {handleName,
-  handelPass,
-  handelEmail,
-  registerProcess,
-  error} = allContext
+  const { allContext } = useAuth();
+  const { handleName,
+    handelPass,
+    handelEmail,
+    registerProcess,
+    signInUsingGoogle,
+    error } = allContext;
   return (
     <div className="text-center my-4">
       <h2>Please Sign Up</h2>
@@ -82,10 +83,16 @@ const {handleName,
                 />
               </InputGroup>
             </Col>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" className="btn btn-primary mt-3">
+              Email and Password
+            </button>
           </Row>
-          
-          <button type="submit" className="btn btn-primary mt-2 w-100">
-            Sign up
+          <button onClick={signInUsingGoogle} type="submit" className="btn btn-primary mt-2 w-100">
+            Google
           </button>
         </Form>
       </div>
