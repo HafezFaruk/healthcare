@@ -17,10 +17,12 @@ const SignUp = () => {
     handelEmail,
     registerProcess,
     signInUsingGoogle,
+    isLogin,
+    toggleLogin,
     error } = allContext;
   return (
     <div className="text-center my-4">
-      <h2>Please Sign Up</h2>
+      <h2>Please {isLogin ? "Login"  :  "Sign Up"}</h2>
       <p className=" mt-2">Sign Up with Email & Password</p>
       <div className="w-25 mx-auto">
         <Form onSubmit={registerProcess}>
@@ -84,7 +86,7 @@ const SignUp = () => {
               </InputGroup>
             </Col>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+              <input onChange={toggleLogin} type="checkbox" class="form-check-input" id="exampleCheck1" />
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
             <button type="submit" className="btn btn-primary mt-3">
@@ -92,7 +94,7 @@ const SignUp = () => {
             </button>
           </Row>
           <button onClick={signInUsingGoogle} type="submit" className="btn btn-primary mt-2 w-100">
-            Google
+            {isLogin ? "Google SignUp" : "Google Login"}
           </button>
         </Form>
       </div>

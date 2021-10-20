@@ -6,7 +6,7 @@ const Register = () => {
 
   return (
     <div className="register" style={{ padding: "58px 0 40px" }}>
-        <h2 className="text-center">Register From</h2>
+        <h2 className="text-center">Contact From</h2>
         <p className="text-center text-muted mb-4">
           You can easily reach us through filling up the form
         </p>

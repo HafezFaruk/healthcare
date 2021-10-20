@@ -9,7 +9,7 @@ import Header from './Pages/Shared/Header/Header';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute'
 import Footer from './Pages/Shared/Footer/Footer';
-import Register from './Pages/Home/Register/Register';
+import Contact from './Pages/Home/Contact/Contact';
 import Equipments from './Pages/Equipments/Equipments';
 import SignUp from './Pages/SignUp/SignUp';
 import Facilities from './Pages/Facilities/Facilities';
@@ -33,8 +33,8 @@ function App() {
             <Route path="/facilities">
               <Facilities></Facilities>
             </Route>
-            <Route path="/register">
-              <Register></Register>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
             <PrivateRoute path="/details/:detailsId">
               <Details></Details>

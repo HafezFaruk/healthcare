@@ -5,6 +5,8 @@ import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
 initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser]=useState({});
+    const [isLogin, setIsLogin] = useState(false)
+    console.log(isLogin);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('')
     const [email, setEmail] = useState("");
@@ -15,11 +17,6 @@ const useFirebase = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
        return  signInWithPopup(auth, googleProvider)
-        /* .then(result =>{
-            setUser(result.user);
-        })
-        .finally(() => setIsLoading(false)); */
-
     }
     // observe user stet change
     useEffect( () => {
@@ -33,7 +30,9 @@ const useFirebase = () => {
         });
         return () => unsubscribed;
     }, [])
-
+    const toggleLogin = (e) => {
+        setIsLogin(e.target.checked)
+    }
     const logOut = () =>{
         setIsLoading(true);
         signOut(auth)
@@ -98,7 +97,10 @@ const useFirebase = () => {
         error,
         isLoading, 
         setIsLoading,
-        setUser
+        setUser,
+        isLogin, 
+        setIsLogin,
+        toggleLogin
 
 
     }

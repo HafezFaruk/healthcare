@@ -7,11 +7,8 @@ import {useHistory, useLocation} from 'react-router-dom';
 
 
 const Login = () => {
- /*  const history= useHistory()
-  const location = useLocation() 
-  const redirect_url = location?.state?.from || '/home' */
+
   const { allContext} = useAuth();
-  
  const  { signInUsingGoogle,handelPass,
   handelEmail,loginProcess, setIsLoading,
         setUser } = allContext
