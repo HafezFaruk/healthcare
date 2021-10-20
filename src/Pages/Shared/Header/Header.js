@@ -52,7 +52,6 @@ const Header = () => {
                                     <Nav.Link className="text-white" as={Link} to="/login">Login</Nav.Link>
                                 </>
 
-
                             }
                             <Navbar.Text>
                                 <a href="#login">{user?.displayName}</a>
