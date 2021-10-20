@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import { HashLink } from 'react-router-hash-link';
 import logo from '../../../images/icon/logo.png'
 
 const Header = () => {
@@ -12,47 +11,26 @@ const Header = () => {
     return (
         <>
             <Container className="py-3 ">
-                <Row className="text-start">
-                    <Col md="3">
+                <Row md="4" sm="12" className="text-center">
+                    <Col sm="12">
                         <img src={logo} alt="" />
                     </Col>
-                    <Col md="9">
-                        <Row>
-                            <Col>
-                                <Row>
-                                    <Col></Col>
-                                    <Col>
-                                        <h6>OUR OFFICE</h6>
-                                        <p>232 Dhaka</p>
-                                        <p>Bangladesh</p>
-                                    </Col>
-                                </Row>
-                            </Col>
-                            <Col>
-                                <Row>
-                                    <Col></Col>
-                                    <Col>
-                                        <h6>MAIL US</h6>
-                                        <p>info@pediatrics.com</p>
-                                        <p>help@pediatrics.com</p>
-                                    </Col>
-                                </Row>
-
-                            </Col>
-                            <Col>
-                                <Row>
-                                    <Col></Col>
-                                    <Col>
-                                        <h6>CALL US</h6>
-                                        <p>900-344-1147</p>
-                                        <p>132-332-4476</p>
-                                    </Col>
-                                </Row>
-
-                            </Col>
-
-                        </Row>
+                    <Col sm="12">
+                        <h6>OUR OFFICE</h6>
+                        <p>232 Dhaka</p>
+                        <p>Bangladesh</p>
                     </Col>
+                    <Col sm="12">
+                        <h6>MAIL US</h6>
+                        <p>info@pediatrics.com</p>
+                        <p>help@pediatrics.com</p>
+                    </Col>
+                    <Col sm="12">
+                        <h6>CALL US</h6>
+                        <p>900-344-1147</p>
+                        <p>132-332-4476</p>
+                    </Col>
+                    
                 </Row>
             </Container>
             <Navbar className="bg-primary" collapseOnSelect expand="lg" variant="dark" sticky="top">
@@ -60,10 +38,10 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="text-center">
-                            <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/equipment">Equipments</Nav.Link>
-                            <Nav.Link as={HashLink} to="/facilities">Facilities</Nav.Link>
-                            <Nav.Link as={HashLink} to="/contact">Contact</Nav.Link>
+                            <Nav.Link className="text-white" as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link className="text-white" as={Link} to="/equipment">Equipments</Nav.Link>
+                            <Nav.Link className="text-white" as={Link} to="/facilities">Facilities</Nav.Link>
+                            <Nav.Link className="text-white" as={Link} to="/contact">Contact</Nav.Link>
 
                             {user?.email ?
                                 <Button onClick={logOut} variant="light">Logout</Button>
@@ -71,7 +49,7 @@ const Header = () => {
                                     <Nav.Link as={Link} to="/signup" className="text-white">
                                         Sign Up
                                     </Nav.Link>
-                                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                    <Nav.Link className="text-white" as={Link} to="/login">Login</Nav.Link>
                                 </>
 
 
@@ -88,28 +66,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*
-<>
-            <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg">
-                <Container>
-                    <Navbar.Brand href="#home">Genius Car Mechanic</Navbar.Brand>
-                    <Navbar>
-                        <Container>
-                            <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
-                            <Navbar.Toggle />
-                            <Navbar.Collapse className="justify-content-end">
-                                <Nav.Link as={Link} to="/home#home">Home</Nav.Link>
-                                <Nav.Link as={Link} to="/home#services">Services</Nav.Link>
-                                <Nav.Link as={Link} to="/home#expert">Expert</Nav.Link>
-                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                                <Navbar.Text>
-                                    Signed in as: <a href="#login">Mark Otto</a>
-                                </Navbar.Text>
-                            </Navbar.Collapse>
-                        </Container>
-                    </Navbar>
-                </Container>
-            </Navbar>
-        </>
-*/

@@ -18,8 +18,7 @@ const SignUp = () => {
     registerProcess,
     signInUsingGoogle,
     isLogin,
-    toggleLogin,
-    error } = allContext;
+    toggleLogin} = allContext;
   return (
     <div className="text-center my-4">
       <h2>Please {isLogin ? "Login"  :  "Sign Up"}</h2>
@@ -94,7 +93,7 @@ const SignUp = () => {
             </button>
           </Row>
           <button onClick={signInUsingGoogle} type="submit" className="btn btn-primary mt-2 w-100">
-            {isLogin ? "Google SignUp" : "Google Login"}
+            {isLogin ? "Google Login"  : "Google SignUp"}
           </button>
         </Form>
       </div>

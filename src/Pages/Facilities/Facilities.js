@@ -1,12 +1,7 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 import Image1 from '../../images/facilities/1.jpg';
 import Image2 from '../../images/facilities/2.jpg';
 import Image3 from '../../images/facilities/3.jpg';
-import Image5 from '../../images/facilities/5.jpg';
-import Image6 from '../../images/facilities/6.jpg';
-import Image7 from '../../images/facilities/7.jpg';
-import Image8 from '../../images/facilities/8.jpg';
 import Image9 from '../../images/facilities/9.jpg';
 
 const Facilities = () => {
