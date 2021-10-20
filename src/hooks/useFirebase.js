@@ -14,11 +14,11 @@ const useFirebase = () => {
     const signInUsingGoogle = () =>{
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-        .then(result =>{
+       return  signInWithPopup(auth, googleProvider)
+        /* .then(result =>{
             setUser(result.user);
         })
-        .finally(() => setIsLoading(false));
+        .finally(() => setIsLoading(false)); */
 
     }
     // observe user stet change
@@ -95,7 +95,11 @@ const useFirebase = () => {
         setUserName,
         loginProcess,
         registerProcess,
-        error
+        error,
+        isLoading, 
+        setIsLoading,
+        setUser
+
 
     }
 }

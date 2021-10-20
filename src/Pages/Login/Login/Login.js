@@ -3,14 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
-
+import {useHistory, useLocation} from 'react-router-dom';
 
 
 const Login = () => {
+ /*  const history= useHistory()
+  const location = useLocation() 
+  const redirect_url = location?.state?.from || '/home' */
   const { allContext} = useAuth();
+  
  const  { signInUsingGoogle,handelPass,
-  handelEmail,loginProcess } = allContext;
-
+  handelEmail,loginProcess, setIsLoading,
+        setUser } = allContext
+          const history= useHistory()
+  const location = useLocation() 
+  const redirect_url = location?.state?.from || '/home'
+const heandleGoogle = () => {
+  signInUsingGoogle()
+    .then(result =>{
+            setUser(result.user);
+            history.push(redirect_url)
+        })
+        .finally(() => setIsLoading(false));
+}
  
   return (
     <div className="py-5">
@@ -59,7 +74,7 @@ const Login = () => {
             Email and Password
           </button>
         </Form>
-        <button onClick={signInUsingGoogle} type="submit" className="btn btn-primary mt-2 w-100">
+        <button onClick={heandleGoogle} type="submit" className="btn btn-primary mt-2 w-100">
           Google
         </button>
       </div>
